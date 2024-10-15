@@ -16,10 +16,14 @@ struct RMImage: View {
                 image
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
             } else if phase.error != nil {
                 Image(AssetConstants.Images.notFound)
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
             } else {
                 ProgressView()
             }

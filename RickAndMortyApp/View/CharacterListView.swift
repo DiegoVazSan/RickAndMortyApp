@@ -12,16 +12,21 @@ struct CharacterListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.characters, id: \.id) { character in
-                HStack {
-                    RMImage(imageUrl: character.image)
-                    Text(character.name)
+                List(viewModel.characters, id: \.id) { character in
+                    HStack {
+                        RMImage(imageUrl: character.image)
+                        Text(character.name)
+                            .font(.title)
+                            .bold()
+                    }
+                    .listRowBackground(Color.red)
+                    .listRowSeparator(.hidden)
                 }
-            }
-            .navigationTitle("Characters")
-            .onAppear {
-                viewModel.fetchCharacters()
-            }
+                .navigationTitle("Characters")
+                .onAppear {
+                    viewModel.fetchCharacters()
+                }
+            
         }
     }
 }
