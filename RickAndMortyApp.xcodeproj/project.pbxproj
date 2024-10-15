@@ -20,6 +20,7 @@
 		DB095FCC2CB89A2100F420C3 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */; };
 		DB095FCF2CB89EEA00F420C3 /* RMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */; };
 		DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FD12CB8A03900F420C3 /* Constants.swift */; };
+		DBCBFF2C2CBEEADE00C3F385 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBFF2B2CBEEADE00C3F385 /* SplashScreenView.swift */; };
 		DBF33DAA2CBDFF2D0046E503 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF33DA92CBDFF2D0046E503 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageView.swift; sourceTree = "<group>"; };
 		DB095FD12CB8A03900F420C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DBCBFF2B2CBEEADE00C3F385 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		DBF33DA92CBDFF2D0046E503 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				DB095FCD2CB89ED100F420C3 /* ReusableViews */,
 				DB095FAD2CB8941600F420C3 /* ContentView.swift */,
 				DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */,
+				DBCBFF2B2CBEEADE00C3F385 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCBFF2C2CBEEADE00C3F385 /* SplashScreenView.swift in Sources */,
 				DB095FC82CB8987C00F420C3 /* RickAndMortyService.swift in Sources */,
 				DB095FCF2CB89EEA00F420C3 /* RMImageView.swift in Sources */,
 				DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */,

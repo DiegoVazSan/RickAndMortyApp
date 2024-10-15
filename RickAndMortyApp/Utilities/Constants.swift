@@ -10,8 +10,9 @@ import Foundation
 struct AssetConstants {
     struct Images {
         static let notFound = "notFound"
-        //static let defaultImage = "defaultImage"
-        //static let logo = "appLogo"
+        static let lightGreen = "lightGreen"
+        static let RMLogo = "rickAndMortyLogo"
+        static let RMPortal = "rickAndMortyPortal"
     }
 
     struct Strings {
