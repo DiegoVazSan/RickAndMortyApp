@@ -12,14 +12,18 @@ struct SplashScreenView: View {
     @State private var isScaled = false
     @State private var goToNextView = false
     @State private var animationCompleted = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.main.ignoresSafeArea()
+                LinearGradient(
+                    gradient: Gradient(colors: [.lightAccent, .main]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ).ignoresSafeArea()
                 
                 animatedImage(
-                    image: AssetConstants.Images.lightGreen,
+                    image: Constants.Images.lightGreen,
                     scale: isScaled ? 1.5 : 1.0,
                     rotation: isRotated ? 360 : 0,
                     duration: 1,
@@ -27,7 +31,7 @@ struct SplashScreenView: View {
                 )
                 
                 animatedImage(
-                    image: AssetConstants.Images.RMLogo,
+                    image: Constants.Images.RMLogo,
                     scale: 1.0,
                     rotation: isRotated ? 360 : 0,
                     duration: 5,
@@ -35,11 +39,10 @@ struct SplashScreenView: View {
                 )
             }
             
-            .navigationDestination(isPresented: $goToNextView) {
-                CharacterListView(
-                    viewModel: CharacterViewModel(networkService: NWServiceManager())
-                )
+            .fullScreenCover(isPresented: $goToNextView) {
+                LoginView()
             }
+
             .onAppear {
                 
                 withAnimation(.linear(duration: 1)) {
