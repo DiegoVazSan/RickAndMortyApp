@@ -19,7 +19,7 @@ struct RMImage: View {
                     .frame(width: 150, height: 150)
                     .clipShape(Circle())
             } else if phase.error != nil {
-                Image(AssetConstants.Images.notFound)
+                Image(Constants.Images.notFound)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)

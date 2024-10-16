@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AssetConstants {
+struct Constants {
     struct Images {
         static let notFound = "notFound"
         static let lightGreen = "lightGreen"
@@ -16,9 +16,10 @@ struct AssetConstants {
     }
 
     struct Strings {
-        //static let welcomeMessage = "Welcome to the app!"
-        //static let loginButton = "Login"
-        //static let errorMessage = "An error occurred. Please try again."
+        static let welcomeMessage = "¡Bienvenido!"
+        static let loginMsg = "Iniciar Sesión"
+        static let email = "Correo electrónico"
+        static let password = "Contraseña"
     }
 
     // También puedes almacenar colores, fuentes, etc.
