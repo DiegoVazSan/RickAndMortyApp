@@ -10,26 +10,54 @@ import SwiftUI
 struct SplashScreenView: View {
     @State private var isRotated = false
     @State private var isScaled = false
-    @State private var showNextView = false
-    let vc = CharacterListView(viewModel: CharacterViewModel(networkService: NWServiceManager()))
-    
+    @State private var goToNextView = false
+    @State private var animationCompleted = false
+
     var body: some View {
-        ZStack {
-            Color.main.ignoresSafeArea()
-            animatedImage(image: AssetConstants.Images.lightGreen, scale: isScaled ? 1.5 : 1.0,
-                          rotation: isRotated ? 360 : 0, duration: 1, scaleAnimation: true)
-            animatedImage(image: AssetConstants.Images.RMLogo, scale: 1.0,
-                          rotation: isRotated ? 360 : 0, duration: 5, scaleAnimation: false)
+        NavigationStack {
+            ZStack {
+                Color.main.ignoresSafeArea()
+                
+                animatedImage(
+                    image: AssetConstants.Images.lightGreen,
+                    scale: isScaled ? 1.5 : 1.0,
+                    rotation: isRotated ? 360 : 0,
+                    duration: 1,
+                    scaleAnimation: true
+                )
+                
+                animatedImage(
+                    image: AssetConstants.Images.RMLogo,
+                    scale: 1.0,
+                    rotation: isRotated ? 360 : 0,
+                    duration: 5,
+                    scaleAnimation: false
+                )
+            }
             
-        }
-        .onAppear {
-            isRotated = true
-            isScaled.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                showNextView = true
+            .navigationDestination(isPresented: $goToNextView) {
+                CharacterListView(
+                    viewModel: CharacterViewModel(networkService: NWServiceManager())
+                )
+            }
+            .onAppear {
+                
+                withAnimation(.linear(duration: 1)) {
+                    isRotated = true
+                    isScaled.toggle()
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    animationCompleted = true
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        goToNextView = true
+                    }
+                }
             }
         }
     }
+
     
     private func animatedImage(image: String, scale: CGFloat, rotation: Double, duration: Double, scaleAnimation: Bool) -> some View {
             Image(image)
@@ -39,12 +67,11 @@ struct SplashScreenView: View {
                 .scaleEffect(scale)
                 .rotationEffect(.degrees(rotation))
                 .animation(
-                    .linear(duration: duration).repeatForever(autoreverses: false), value: rotation
+                    .linear(duration: duration).repeatForever(autoreverses: false), value: isRotated
                 )
                 .clipped()
                 .padding()
         }
-    
 }
 
 #Preview {
