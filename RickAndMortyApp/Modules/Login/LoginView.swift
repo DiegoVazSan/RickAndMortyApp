@@ -39,24 +39,35 @@ struct LoginView: View {
                 
                 UIFactory.loginButton(title: Constants.Strings.loginMsg,
                                       action: {
-                    showAlert = !validEmailAndPassword()
+                    showAlert = !validateFields()
                 })
                 .padding()
                 
                 Spacer()
             }
             .padding()
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Error"), message: Text("Por favor, completa todos los campos"), dismissButton: .default(Text("Aceptar")))
+            
+            if showAlert {
+                
+                RMAlert(message: Constants.Strings.incompleteFields,
+                        onDismiss: { showAlert = false })
+            }
         }
     }
     
-    func validEmailAndPassword() -> Bool {
-        if username.isEmpty || password.isEmpty {
-            return false
-        } else {
+    func isValidEmail() -> Bool {
+        FieldValidator.isValidEmail(username)
+    }
+    
+    func isValidPassword() -> Bool{
+        FieldValidator.isValidPassword(password)
+    }
+    
+    func validateFields() -> Bool {
+        if isValidEmail() || isValidPassword() {
             return true
+        } else {
+            return false
         }
     }
     
