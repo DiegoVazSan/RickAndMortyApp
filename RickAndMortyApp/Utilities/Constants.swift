@@ -20,6 +20,9 @@ struct Constants {
         static let loginMsg = "Iniciar Sesión"
         static let email = "Correo electrónico"
         static let password = "Contraseña"
+        static let warning = "Aviso"
+        static let accept = "Aceptar"
+        static let incompleteFields = "Por favor, completa todos los campos"
     }
 
     // También puedes almacenar colores, fuentes, etc.
