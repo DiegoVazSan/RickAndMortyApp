@@ -66,4 +66,26 @@ struct UIFactory {
             .padding(.bottom, 40)
     }
     
+    static func animatedImage(image: String, scale: CGFloat, rotation: Double, duration: Double, scaleAnimation: Bool, isRotated: Bool) -> some View {
+            Image(image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: scaleAnimation ? 400 : 300, height: scaleAnimation ? 400 : 300)
+                .scaleEffect(scale)
+                .rotationEffect(.degrees(rotation))
+                .animation(
+                    .linear(duration: duration).repeatForever(autoreverses: false), value: isRotated
+                )
+                .clipped()
+                .padding()
+        }
+    
+    static func backgroundGradient() -> some View {
+        LinearGradient(
+            gradient: Gradient(colors: [.lightAccent, .main]),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        ).ignoresSafeArea()
+    }
+    
 }
