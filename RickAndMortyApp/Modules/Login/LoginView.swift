@@ -39,6 +39,9 @@ struct LoginView: View {
             }
             
         }
+        .fullScreenCover(isPresented: $viewModel.showHomeModule) {
+            HomeTabView()
+        }
     }
     
 }

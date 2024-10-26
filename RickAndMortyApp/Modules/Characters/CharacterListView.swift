@@ -9,24 +9,29 @@ import SwiftUI
 
 struct CharacterListView: View {
     @StateObject var viewModel: CharacterViewModel
-
+    
     var body: some View {
-        NavigationView {
-                List(viewModel.characters, id: \.id) { character in
-                    HStack {
-                        RMImage(imageUrl: character.image)
-                        Text(character.name)
-                            .font(.title)
-                            .bold()
-                    }
-                    .listRowBackground(Color.red)
-                    .listRowSeparator(.hidden)
+        ZStack {
+            Color.mainBackground.ignoresSafeArea(.all)
+            
+            List(viewModel.characters, id: \.id) { character in
+                HStack {
+                    RMImage(imageUrl: character.image)
+                    Text(character.name)
+                        .font(.title)
+                        .bold()
                 }
-                .navigationTitle("Characters")
-                .onAppear {
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            }
+            .listStyle(PlainListStyle())
+            .background(Color.clear)
+            .navigationTitle("Characters")
+            .onAppear {
+                if viewModel.characters.isEmpty {
                     viewModel.fetchCharacters()
                 }
-            
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ class LoginViewModel: ObservableObject {
     @Published var isValidEmail: Bool = true
     @Published var isValidPassword: Bool = true
     @Published var showAlert: Bool = false
+    @Published var showHomeModule: Bool = false
     
     private var validatedFields: Bool {
         return isValidEmail  && isValidPassword
@@ -40,7 +41,7 @@ class LoginViewModel: ObservableObject {
     func login(){
         checkAllFields()
         if validatedFields {
-            print("continuar a la siguiente vista")
+            showHomeModule = true
         } else {
             showAlert = true
         }
