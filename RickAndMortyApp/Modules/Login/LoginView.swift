@@ -8,38 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var showAlert: Bool = false
-    @State private var isLoginSuccessful: Bool = false
+    @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
         ZStack {
             Color.mainBackground.ignoresSafeArea()
             VStack {
-                Image(Constants.Images.RMPortal)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
-                    .padding()
                 
-                Text(Constants.Strings.welcomeMessage)
-                    .font(.largeTitle)
-                    .padding(.bottom, 40)
+                UIFactory.coverImg(img: Constants.Images.RMPortal)
                 
-                TextField(Constants.Strings.email,
-                          text: $username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                UIFactory.largeTitle(title: Constants.Strings.welcomeMessage)
                 
-                SecureField(Constants.Strings.password,
-                            text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                UIFactory.txtField(title: Constants.Strings.email,
+                                   text: $viewModel.email, isValid: viewModel.isValidEmail)
+                
+                UIFactory.secureTxtField(title: Constants.Strings.password, text: $viewModel.password, isValid: viewModel.isValidPassword)
                 
                 UIFactory.loginButton(title: Constants.Strings.loginMsg,
                                       action: {
-                    showAlert = !validateFields()
+                    viewModel.login()
                 })
                 .padding()
                 
@@ -47,27 +34,10 @@ struct LoginView: View {
             }
             .padding()
             
-            if showAlert {
-                
-                RMAlert(message: Constants.Strings.incompleteFields,
-                        onDismiss: { showAlert = false })
+            if viewModel.showAlert {
+                RMAlert(message: Constants.Strings.incompleteFields) { viewModel.showAlert = false }
             }
-        }
-    }
-    
-    func isValidEmail() -> Bool {
-        FieldValidator.isValidEmail(username)
-    }
-    
-    func isValidPassword() -> Bool{
-        FieldValidator.isValidPassword(password)
-    }
-    
-    func validateFields() -> Bool {
-        if isValidEmail() || isValidPassword() {
-            return true
-        } else {
-            return false
+            
         }
     }
     
