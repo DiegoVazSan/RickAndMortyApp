@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var showAlert: Bool = false
-    @State private var isLoginSuccessful: Bool = false
+    @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
         ZStack {
@@ -28,18 +25,28 @@ struct LoginView: View {
                     .padding(.bottom, 40)
                 
                 TextField(Constants.Strings.email,
-                          text: $username)
+                          text: $viewModel.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(viewModel.isValidEmail ? .blue : .red, lineWidth: 2)
+                        .padding()
+                )
                 
                 SecureField(Constants.Strings.password,
-                            text: $password)
+                            text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(viewModel.isValidPassword ? .blue : .red, lineWidth: 2)
+                        .padding()
+                )
                 
                 UIFactory.loginButton(title: Constants.Strings.loginMsg,
                                       action: {
-                    showAlert = !validateFields()
+                    viewModel.validateFields()
                 })
                 .padding()
                 
@@ -47,27 +54,6 @@ struct LoginView: View {
             }
             .padding()
             
-            if showAlert {
-                
-                RMAlert(message: Constants.Strings.incompleteFields,
-                        onDismiss: { showAlert = false })
-            }
-        }
-    }
-    
-    func isValidEmail() -> Bool {
-        FieldValidator.isValidEmail(username)
-    }
-    
-    func isValidPassword() -> Bool{
-        FieldValidator.isValidPassword(password)
-    }
-    
-    func validateFields() -> Bool {
-        if isValidEmail() || isValidPassword() {
-            return true
-        } else {
-            return false
         }
     }
     
