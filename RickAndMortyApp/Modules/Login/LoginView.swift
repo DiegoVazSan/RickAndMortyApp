@@ -14,45 +14,29 @@ struct LoginView: View {
         ZStack {
             Color.mainBackground.ignoresSafeArea()
             VStack {
-                Image(Constants.Images.RMPortal)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
-                    .padding()
                 
-                Text(Constants.Strings.welcomeMessage)
-                    .font(.largeTitle)
-                    .padding(.bottom, 40)
+                UIFactory.coverImg(img: Constants.Images.RMPortal)
                 
-                TextField(Constants.Strings.email,
-                          text: $viewModel.email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(viewModel.isValidEmail ? .blue : .red, lineWidth: 2)
-                        .padding()
-                )
+                UIFactory.largeTitle(title: Constants.Strings.welcomeMessage)
                 
-                SecureField(Constants.Strings.password,
-                            text: $viewModel.password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(viewModel.isValidPassword ? .blue : .red, lineWidth: 2)
-                        .padding()
-                )
+                UIFactory.txtField(title: Constants.Strings.email,
+                                   text: $viewModel.email, isValid: viewModel.isValidEmail)
+                
+                UIFactory.secureTxtField(title: Constants.Strings.password, text: $viewModel.password, isValid: viewModel.isValidPassword)
                 
                 UIFactory.loginButton(title: Constants.Strings.loginMsg,
                                       action: {
-                    viewModel.validateFields()
+                    viewModel.login()
                 })
                 .padding()
                 
                 Spacer()
             }
             .padding()
+            
+            if viewModel.showAlert {
+                RMAlert(message: Constants.Strings.incompleteFields) { viewModel.showAlert = false }
+            }
             
         }
     }
