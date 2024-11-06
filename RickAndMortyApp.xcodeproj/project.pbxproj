@@ -21,6 +21,8 @@
 		DB095FCF2CB89EEA00F420C3 /* RMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */; };
 		DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FD12CB8A03900F420C3 /* Constants.swift */; };
 		DB48CCA32CDBDDB7001B24FD /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */; };
+		DB48CCA52CDBE828001B24FD /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */; };
+		DB48CCA72CDBE938001B24FD /* Categorys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA62CDBE938001B24FD /* Categorys.swift */; };
 		DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */; };
 		DBAA824F2CC0351C003294CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA824E2CC0351C003294CB /* LoginView.swift */; };
 		DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA82512CC03AFB003294CB /* UIFactory.swift */; };
@@ -45,6 +47,8 @@
 		DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageView.swift; sourceTree = "<group>"; };
 		DB095FD12CB8A03900F420C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		DB48CCA62CDBE938001B24FD /* Categorys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorys.swift; sourceTree = "<group>"; };
 		DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		DBAA824E2CC0351C003294CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DBAA82512CC03AFB003294CB /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */,
+				DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */,
+				DB48CCA62CDBE938001B24FD /* Categorys.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */,
 				DB095FC22CB8961F00F420C3 /* CharacterModel.swift in Sources */,
 				DB095FCC2CB89A2100F420C3 /* CharacterListView.swift in Sources */,
+				DB48CCA52CDBE828001B24FD /* ExploreViewModel.swift in Sources */,
 				DB095FAE2CB8941600F420C3 /* ContentView.swift in Sources */,
 				DB095FC62CB896EF00F420C3 /* NetworkService.swift in Sources */,
 				DBE66AAF2CCC6F2A00B74BDE /* LoginViewModel.swift in Sources */,
@@ -317,6 +324,7 @@
 				DB095FCA2CB898FB00F420C3 /* CharacterViewModel.swift in Sources */,
 				DB095FAC2CB8941600F420C3 /* RickAndMortyAppApp.swift in Sources */,
 				DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */,
+				DB48CCA72CDBE938001B24FD /* Categorys.swift in Sources */,
 				DBE1858D2CC1831100C81C56 /* RMAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
