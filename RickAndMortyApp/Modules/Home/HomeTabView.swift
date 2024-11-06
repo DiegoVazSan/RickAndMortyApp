@@ -10,8 +10,7 @@ import SwiftUI
 struct HomeTabView: View {
     var body: some View {
         TabView {
-            
-            CharacterListView(viewModel: CharacterViewModel(networkService: NWServiceManager()))
+            ExploreView()
                 .tabItem {
                     Label("Explora", systemImage: "magnifyingglass")
                 }

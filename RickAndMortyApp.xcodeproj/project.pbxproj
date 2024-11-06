@@ -20,6 +20,7 @@
 		DB095FCC2CB89A2100F420C3 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */; };
 		DB095FCF2CB89EEA00F420C3 /* RMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */; };
 		DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FD12CB8A03900F420C3 /* Constants.swift */; };
+		DB48CCA32CDBDDB7001B24FD /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */; };
 		DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */; };
 		DBAA824F2CC0351C003294CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA824E2CC0351C003294CB /* LoginView.swift */; };
 		DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA82512CC03AFB003294CB /* UIFactory.swift */; };
@@ -43,6 +44,7 @@
 		DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageView.swift; sourceTree = "<group>"; };
 		DB095FD12CB8A03900F420C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		DBAA824E2CC0351C003294CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DBAA82512CC03AFB003294CB /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
@@ -158,9 +160,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		DB48CCA12CDBDDA4001B24FD /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		DBAA82492CC033EE003294CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DB48CCA12CDBDDA4001B24FD /* Explore */,
 				DBC506402CCD2135003F76BD /* Home */,
 				DBAA824D2CC0350B003294CB /* Login */,
 				DBAA824C2CC03456003294CB /* Characters */,
@@ -302,6 +313,7 @@
 				DBC506422CCD2151003F76BD /* HomeTabView.swift in Sources */,
 				DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */,
 				DBAA824F2CC0351C003294CB /* LoginView.swift in Sources */,
+				DB48CCA32CDBDDB7001B24FD /* ExploreView.swift in Sources */,
 				DB095FCA2CB898FB00F420C3 /* CharacterViewModel.swift in Sources */,
 				DB095FAC2CB8941600F420C3 /* RickAndMortyAppApp.swift in Sources */,
 				DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */,

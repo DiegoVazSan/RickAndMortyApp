@@ -11,34 +11,28 @@ struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
-        ZStack {
-            Color.mainBackground.ignoresSafeArea()
-            VStack {
-                
-                UIFactory.coverImg(img: Constants.Images.RMPortal)
-                
-                UIFactory.largeTitle(title: Constants.Strings.welcomeMessage)
-                
-                UIFactory.txtField(title: Constants.Strings.email,
-                                   text: $viewModel.email, isValid: viewModel.isValidEmail)
-                
-                UIFactory.secureTxtField(title: Constants.Strings.password, text: $viewModel.password, isValid: viewModel.isValidPassword)
-                
-                UIFactory.loginButton(title: Constants.Strings.loginMsg,
-                                      action: {
-                    viewModel.login()
-                })
-                .padding()
-                
-                Spacer()
-            }
+        UIFactory.baseView(content: {
+            
+            UIFactory.coverImg(img: Constants.Images.RMPortal)
+            
+            UIFactory.largeTitle(title: Constants.Strings.welcomeMessage)
+            
+            UIFactory.txtField(title: Constants.Strings.email,
+                               text: $viewModel.email, isValid: viewModel.isValidEmail)
+            
+            UIFactory.secureTxtField(title: Constants.Strings.password, text: $viewModel.password, isValid: viewModel.isValidPassword)
+            
+            UIFactory.loginButton(title: Constants.Strings.loginMsg,
+                                  action: {
+                viewModel.login()
+            })
             .padding()
             
             if viewModel.showAlert {
                 RMAlert(message: Constants.Strings.incompleteFields) { viewModel.showAlert = false }
             }
             
-        }
+        })
         .fullScreenCover(isPresented: $viewModel.showHomeModule) {
             HomeTabView()
         }

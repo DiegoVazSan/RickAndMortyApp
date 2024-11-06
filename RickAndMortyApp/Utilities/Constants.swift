@@ -23,8 +23,8 @@ struct Constants {
         static let warning = "Aviso"
         static let accept = "Aceptar"
         static let incompleteFields = "Por favor, completa todos los campos"
+        static let exploreTitle = "Explore"
     }
-
-    // También puedes almacenar colores, fuentes, etc.
+    
 }
 

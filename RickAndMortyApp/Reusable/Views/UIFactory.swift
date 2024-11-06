@@ -88,4 +88,14 @@ struct UIFactory {
         ).ignoresSafeArea()
     }
     
+    static func baseView<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        ZStack {
+            Color.mainBackground.ignoresSafeArea()
+            VStack {
+                content()
+            }
+        }
+    }
+
+    
 }
