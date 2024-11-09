@@ -29,12 +29,26 @@ struct ExploreView: View {
             .padding(.bottom, 10)
         }
     
+    @ViewBuilder
+        private func selectedCategoryView() -> some View {
+            switch selectedCategory {
+            case .all:
+                Text("Showing All Elements")
+            case .characters :
+                CharacterListView(viewModel: CharacterViewModel(networkService: NWServiceManager()))
+            case .episodes:
+                Text("View for episodes")
+            case .places:
+                Text("View for places")
+            }
+        }
+    
     
     var body: some View {
         NavigationStack {
             UIFactory.baseView {
                 categoryMenu
-                Spacer()
+                selectedCategoryView()
             }
             .navigationTitle(Constants.Strings.exploreTitle)
         }

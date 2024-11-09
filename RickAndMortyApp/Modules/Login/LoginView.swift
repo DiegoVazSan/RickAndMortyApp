@@ -24,7 +24,7 @@ struct LoginView: View {
             
             UIFactory.loginButton(title: Constants.Strings.loginMsg,
                                   action: {
-                viewModel.login()
+                viewModel.showHomeModule = true
             })
             .padding()
             

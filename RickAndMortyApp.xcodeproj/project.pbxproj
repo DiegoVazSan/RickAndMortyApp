@@ -28,6 +28,7 @@
 		DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA82512CC03AFB003294CB /* UIFactory.swift */; };
 		DBC506422CCD2151003F76BD /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC506412CCD2151003F76BD /* HomeTabView.swift */; };
 		DBCBFF2C2CBEEADE00C3F385 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBFF2B2CBEEADE00C3F385 /* SplashScreenView.swift */; };
+		DBDAEA652CDF8FAC004B728A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DBDAEA642CDF8FAC004B728A /* Kingfisher */; };
 		DBE1858D2CC1831100C81C56 /* RMAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1858C2CC1831100C81C56 /* RMAlert.swift */; };
 		DBE66AAF2CCC6F2A00B74BDE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE66AAE2CCC6F2A00B74BDE /* LoginViewModel.swift */; };
 		DBF33DAA2CBDFF2D0046E503 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF33DA92CBDFF2D0046E503 /* Launch Screen.storyboard */; };
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDAEA652CDF8FAC004B728A /* Kingfisher in Frameworks */,
 				DB095FBB2CB8958F00F420C3 /* Alamofire in Frameworks */,
 				DB095FBD2CB8958F00F420C3 /* AlamofireDynamic in Frameworks */,
 			);
@@ -248,6 +250,7 @@
 			packageProductDependencies = (
 				DB095FBA2CB8958F00F420C3 /* Alamofire */,
 				DB095FBC2CB8958F00F420C3 /* AlamofireDynamic */,
+				DBDAEA642CDF8FAC004B728A /* Kingfisher */,
 			);
 			productName = RickAndMortyApp;
 			productReference = DB095FA82CB8941600F420C3 /* RickAndMortyApp.app */;
@@ -279,6 +282,7 @@
 			mainGroup = DB095F9F2CB8941600F420C3;
 			packageReferences = (
 				DB095FB92CB8958F00F420C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DB095FA92CB8941600F420C3 /* Products */;
 			projectDirPath = "";
@@ -541,6 +545,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +565,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB095FB92CB8958F00F420C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		DBDAEA642CDF8FAC004B728A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
