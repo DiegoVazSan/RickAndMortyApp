@@ -20,11 +20,15 @@
 		DB095FCC2CB89A2100F420C3 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */; };
 		DB095FCF2CB89EEA00F420C3 /* RMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */; };
 		DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB095FD12CB8A03900F420C3 /* Constants.swift */; };
+		DB48CCA32CDBDDB7001B24FD /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */; };
+		DB48CCA52CDBE828001B24FD /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */; };
+		DB48CCA72CDBE938001B24FD /* Categorys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48CCA62CDBE938001B24FD /* Categorys.swift */; };
 		DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */; };
 		DBAA824F2CC0351C003294CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA824E2CC0351C003294CB /* LoginView.swift */; };
 		DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA82512CC03AFB003294CB /* UIFactory.swift */; };
 		DBC506422CCD2151003F76BD /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC506412CCD2151003F76BD /* HomeTabView.swift */; };
 		DBCBFF2C2CBEEADE00C3F385 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBFF2B2CBEEADE00C3F385 /* SplashScreenView.swift */; };
+		DBDAEA652CDF8FAC004B728A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DBDAEA642CDF8FAC004B728A /* Kingfisher */; };
 		DBE1858D2CC1831100C81C56 /* RMAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1858C2CC1831100C81C56 /* RMAlert.swift */; };
 		DBE66AAF2CCC6F2A00B74BDE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE66AAE2CCC6F2A00B74BDE /* LoginViewModel.swift */; };
 		DBF33DAA2CBDFF2D0046E503 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF33DA92CBDFF2D0046E503 /* Launch Screen.storyboard */; };
@@ -43,6 +47,9 @@
 		DB095FCB2CB89A2000F420C3 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		DB095FCE2CB89EEA00F420C3 /* RMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageView.swift; sourceTree = "<group>"; };
 		DB095FD12CB8A03900F420C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		DB48CCA62CDBE938001B24FD /* Categorys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorys.swift; sourceTree = "<group>"; };
 		DB4D0DBF2CC17C4B0053EC2F /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		DBAA824E2CC0351C003294CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DBAA82512CC03AFB003294CB /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDAEA652CDF8FAC004B728A /* Kingfisher in Frameworks */,
 				DB095FBB2CB8958F00F420C3 /* Alamofire in Frameworks */,
 				DB095FBD2CB8958F00F420C3 /* AlamofireDynamic in Frameworks */,
 			);
@@ -158,9 +166,20 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		DB48CCA12CDBDDA4001B24FD /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DB48CCA22CDBDDB7001B24FD /* ExploreView.swift */,
+				DB48CCA42CDBE827001B24FD /* ExploreViewModel.swift */,
+				DB48CCA62CDBE938001B24FD /* Categorys.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		DBAA82492CC033EE003294CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DB48CCA12CDBDDA4001B24FD /* Explore */,
 				DBC506402CCD2135003F76BD /* Home */,
 				DBAA824D2CC0350B003294CB /* Login */,
 				DBAA824C2CC03456003294CB /* Characters */,
@@ -231,6 +250,7 @@
 			packageProductDependencies = (
 				DB095FBA2CB8958F00F420C3 /* Alamofire */,
 				DB095FBC2CB8958F00F420C3 /* AlamofireDynamic */,
+				DBDAEA642CDF8FAC004B728A /* Kingfisher */,
 			);
 			productName = RickAndMortyApp;
 			productReference = DB095FA82CB8941600F420C3 /* RickAndMortyApp.app */;
@@ -262,6 +282,7 @@
 			mainGroup = DB095F9F2CB8941600F420C3;
 			packageReferences = (
 				DB095FB92CB8958F00F420C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DB095FA92CB8941600F420C3 /* Products */;
 			projectDirPath = "";
@@ -296,15 +317,18 @@
 				DB095FD22CB8A03900F420C3 /* Constants.swift in Sources */,
 				DB095FC22CB8961F00F420C3 /* CharacterModel.swift in Sources */,
 				DB095FCC2CB89A2100F420C3 /* CharacterListView.swift in Sources */,
+				DB48CCA52CDBE828001B24FD /* ExploreViewModel.swift in Sources */,
 				DB095FAE2CB8941600F420C3 /* ContentView.swift in Sources */,
 				DB095FC62CB896EF00F420C3 /* NetworkService.swift in Sources */,
 				DBE66AAF2CCC6F2A00B74BDE /* LoginViewModel.swift in Sources */,
 				DBC506422CCD2151003F76BD /* HomeTabView.swift in Sources */,
 				DBAA82522CC03AFB003294CB /* UIFactory.swift in Sources */,
 				DBAA824F2CC0351C003294CB /* LoginView.swift in Sources */,
+				DB48CCA32CDBDDB7001B24FD /* ExploreView.swift in Sources */,
 				DB095FCA2CB898FB00F420C3 /* CharacterViewModel.swift in Sources */,
 				DB095FAC2CB8941600F420C3 /* RickAndMortyAppApp.swift in Sources */,
 				DB4D0DC02CC17C4B0053EC2F /* FieldValidator.swift in Sources */,
+				DB48CCA72CDBE938001B24FD /* Categorys.swift in Sources */,
 				DBE1858D2CC1831100C81C56 /* RMAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +545,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -533,6 +565,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB095FB92CB8958F00F420C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		DBDAEA642CDF8FAC004B728A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBDAEA632CDF8FAC004B728A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
